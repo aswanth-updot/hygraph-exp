@@ -18,13 +18,6 @@ export default function Header() {
           >
             Home
           </Link>
-
-          <Link
-            href="/products"
-            className="text-gray-600 transition hover:text-black"
-          >
-            Products
-          </Link>
         </nav>
       </div>
     </header>
