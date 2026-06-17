@@ -1,19 +1,39 @@
-export interface Product {
+export interface Food {
     id: string;
-    productName: string;
+    name: string;
     slug: string;
-    thumbnail: {
+    image: {
+        url: string;
+    };
+    heroDescription: {
+        html: string;
+    };
+    shortDescription: string;
+    foodCategories: FoodCategory[];
+}
+
+export interface FoodCategory {
+    id: string;
+    name: string;
+    slug: string;
+    description: {
+        html: string;
+    };
+    image: {
+        url: string;
+    }
+}
+
+export interface Restaurant {
+    id: string;
+    name: string;
+    slug: string;
+    image: {
         url: string;
     };
     description: {
         html: string;
+        text: string;
     };
-    price: string;
-    quantity: string;
-    productCategories: ProductCategories[];
-}
-
-export interface ProductCategories {
-    id: string;
-    name: string;
+    foods: Food[];
 }

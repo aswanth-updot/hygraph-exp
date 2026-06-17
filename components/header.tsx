@@ -1,23 +1,38 @@
-import Link from "next/link";
-
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <Link
+    <header className="sticky top-0 z-50 border-b border-[#e9e9eb] bg-white">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+        {/* Logo */}
+        <a
           href="/"
-          className="text-2xl font-bold tracking-tight text-gray-900"
+          className="flex items-center gap-3 transition-opacity hover:opacity-80"
         >
-          Store
-        </Link>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fc8019] text-lg font-bold text-white">
+            F
+          </div>
 
-        <nav className="flex items-center gap-8 text-sm font-medium">
-          <Link
-            href="/"
-            className="text-gray-600 transition hover:text-black"
-          >
-            Home
-          </Link>
+          <div>
+            <h1 className="text-xl font-bold tracking-tight text-[#282c3f]">
+              FoodFinder
+            </h1>
+            <p className="text-xs text-[#686b78]">
+              Discover the best dishes
+            </p>
+          </div>
+        </a>
+
+        {/* Navigation */}
+        <nav>
+          <ul className="flex items-center gap-8">
+            <li>
+              <a
+                href="/"
+                className="font-medium text-[#282c3f] transition-colors hover:text-[#fc8019]"
+              >
+                Home
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
