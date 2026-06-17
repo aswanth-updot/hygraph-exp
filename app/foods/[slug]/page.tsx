@@ -4,7 +4,11 @@ import { getFoodBySlug } from "@/lib/foods";
 import { allRestaurants } from "@/lib/restaurants";
 import { notFound } from "next/navigation";
 
-export default async function FoodPage({ params }: Promise<{ params: { slug: string; }; }>) {
+type PageProps = {
+    params: Promise<{ slug: string; }>;
+};
+
+export default async function FoodPage({ params }: PageProps) {
     const { slug } = await params;
     const food = await getFoodBySlug(slug);
     const restaurants = await allRestaurants(slug);

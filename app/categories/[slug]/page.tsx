@@ -6,7 +6,11 @@ import { allCategories, getCategoryBySlug } from "@/lib/categories";
 import { allFood } from "@/lib/foods";
 import { notFound } from "next/navigation";
 
-export default async function CategoryPage({ params }: Promise<{ params: { slug: string; }; }>) {
+type PageProps = {
+    params: Promise<{ slug: string; }>;
+};
+
+export default async function CategoryPage({ params }: PageProps) {
     const { slug } = await params;
     const category = await getCategoryBySlug(slug);
     if (!category) {
